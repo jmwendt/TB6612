@@ -1,0 +1,80 @@
+var down = {
+	w: false,
+	a: false,
+	s: false,
+	d: false
+};
+
+$(window).on('keydown', function(e) {
+	//w = 87
+	//a = 65
+	//s = 83
+	//d = 68
+	var code = e.keyCode || e.which;
+	var changed = false;
+	
+	if(code == 87 && !down.w) {
+		$('#w').addClass('highlight');
+		changed = true;
+		down.w = true;
+	} else if(code == 65 && !down.a) {
+		$('#a').addClass('highlight');
+		changed = true;
+		down.a = true;
+	} else if(code == 83 && !down.s) {
+		$('#s').addClass('highlight');
+		changed = true;
+		down.s = true;
+	} else if(code == 68 && !down.d) {
+		$('#d').addClass('highlight');
+		changed = true;
+		down.d = true;
+	}
+	
+	if(changed) {
+		$.ajax({
+			url: 'wasd',
+			data: {
+				w: down.w,
+				a: down.a,
+				s: down.s,
+				d: down.d
+			}
+		});
+	}
+});
+
+$(window).on('keyup', function(e) {
+	var code = e.keyCode || e.which;
+	var changed = false;
+	
+	if(code == 87) {
+		$('#w').removeClass('highlight');
+		changed = true;
+		down.w = false;
+	} else if(code == 65) {
+		$('#a').removeClass('highlight');
+		changed = true;
+		down.a = false;
+	} else if(code == 83) {
+		$('#s').removeClass('highlight');
+		changed = true;
+		down.s = false;
+	} else if(code == 68) {
+		$('#d').removeClass('highlight');
+		changed = true;
+		down.d = false;
+	}
+	
+	if(changed) {
+		$.ajax({
+			url: 'wasd',
+			data: {
+				w: down.w,
+				a: down.a,
+				s: down.s,
+				d: down.d
+			}
+		});
+	}
+});
