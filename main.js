@@ -1,3 +1,13 @@
+/****************************************************************************
+ * main.js
+ * Node.js webserver
+ * Jake Wendt
+ * 24 May 2017
+ * https://github.com/jmwendt/TB6612
+ *
+ * This is a simple webserver implementing the tb6612 library for testing
+ * ****************************************************************************/
+
 /* spec jslint and jshint lines for desired JavaScript linting */
 /* see http://www.jslint.com/help.html and http://jshint.com/docs */
 /* jslint node:true */
@@ -6,7 +16,7 @@
 var http = require("http"),
 	express = require('express'),
 	morgan = require('morgan'),
-		tb6612 = require('./tb6612.js');
+	tb6612 = require('./tb6612.js');
 
 var motor = new tb6612();
 var fwd = 0,
@@ -59,6 +69,10 @@ app.get('/wasd', function(req, res) {
 		rightSpeed = 1;
 	if(rightSpeed < -1)
 		rightSpeed = -1;
+	if(leftSpeed == 0 && rightSpeed == 0)
+		motor.shortBrake(true, true);
+	else
+		motor.shortBrake(false, false);
 	motor.diffDrive(leftSpeed * 0.5, rightSpeed * 0.5);
 	res.send(leftSpeed + ", " + rightSpeed);
 });

@@ -27,3 +27,9 @@ Thumbs.db
 .hg
 .svn
 .CVS
+
+#Intel XDK
+xdk/
+*.xdk
+*.xdke
+icon.png
