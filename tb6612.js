@@ -6,14 +6,14 @@
  * https://github.com/jmwendt/TB6612
  *
  * This library defines a simple class for driving the TB6612 H-Bridge chip
- *  used on the H-Bridge Block for Edison from SparkFun Electronics. It 
- *  provides a front end to the MRAA functions from Intel, encapsulating the
- *  various GPIO settings needed to control the TB6612.
+ * used on the H-Bridge Block for Edison from SparkFun Electronics. It 
+ * provides a front end to the MRAA functions from Intel, encapsulating the
+ * various GPIO settings needed to control the TB6612.
  *
  * Development environment specifics:
- *  Code developed in Intel's XDK
- *  This code requires the Intel mraa library to function; for more
- *  information see https://github.com/intel-iot-devkit/mraa
+ * Code developed in Intel's XDK
+ * This code requires the Intel mraa library to function; for more
+ * information see https://github.com/intel-iot-devkit/mraa
  * ****************************************************************************/
 
 /* spec jslint and jshint lines for desired JavaScript linting */
@@ -41,7 +41,7 @@ function tb6612() {
 	this._pwmB.write(0.0);
 
 	// _A1 and _A2 are on GPIO48 and GPIO47, respectively, which are pins 33 and
-  //  46 in mraa, respectively.
+	// 46 in mraa, respectively.
 	this._A1 = new this.mraa.Gpio(33);
 	this._A1.dir(this.mraa.DIR_OUT);
 	this._A1.mode(this.mraa.MODE_STRONG);
@@ -53,7 +53,7 @@ function tb6612() {
 	this._A2.write(1);
 	
 	// _B1 and _B2 are on GPIO15 and GPIO14, respectively, which are pins 48 and
-  //  36, respectively
+	// 36, respectively
 	this._B1 = new this.mraa.Gpio(48);
 	this._B1.dir(this.mraa.DIR_OUT);
 	this._B1.mode(this.mraa.MODE_STRONG);
@@ -76,17 +76,17 @@ tb6612.prototype.diffDrive = function(dcA, dcB) {
 	this._dcB = dcB;
 
 	if(dcA < 0) {
-	   this.revA();
-	   dcA = dcA * -1;
+		this.revA();
+		dcA = dcA * -1;
 	} else {
-	   this.fwdA();
+		this.fwdA();
 	}
 
 	if(dcB < 0) {
-	   this.revB();
-	   dcB = dcB * -1;
+		this.revB();
+		dcB = dcB * -1;
 	} else {
-	   this.fwdB();
+		this.fwdB();
 	}
 
 	this._pwmA.write(dcA);
@@ -95,25 +95,25 @@ tb6612.prototype.diffDrive = function(dcA, dcB) {
 
 tb6612.prototype.standby = function(disableMotors) {
 	if(disableMotors) {
-	   this._standbyPin.write(0);
+		this._standbyPin.write(0);
 	} else {
-	   this._standbyPin.write(1);
+		this._standbyPin.write(1);
 	}
 };
 
 tb6612.prototype.shortBrake = function(brakeA, brakeB) {
 	if(brakeA) {
-	   this._A1.write(1);
-	   this._A2.write(1);
+		this._A1.write(1);
+		this._A2.write(1);
 	}
 	if(brakeB) {
-	   this._B1.write(1);
-	   this._B2.write(1);
+		this._B1.write(1);
+		this._B2.write(1);
 	}
 };
 
 tb6612.prototype.getStandby = function() {
-	if(this._standbyPin.read() == 0) {
+	if(this._standbyPin.read() === 0) {
 		return true;
 	} else {
 		return false;

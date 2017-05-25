@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            table {
-                border-spacing: 5px;
-                margin: 0 auto;
-            }
-            td {
-                border: 1px solid #000;
-                border-radius: 3px;
-                padding: 3px;
-                text-align: center;
-            }
-            td.noborder {
-                border: none;
-            }
-            .highlight {
-                background-color: #DDD;
-            }
-        </style>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"
-            defer></script>
-        <script src="keys.js" defer></script>
-    </head>
-    <body>
-        <table>
-					<tr>
-						<td class="noborder"></td>
-						<td id="w" ontouchstart="tstart(87);" ontouchend="tend(87);">W</td>
-						<td class="noborder"></td>
-					</tr>
-					<tr>
-						<td id="a" ontouchstart="tstart(65);" ontouchend="tend(65);">A</td>
-						<td id="s" ontouchstart="tstart(83);" ontouchend="tend(83);">S</td>
-						<td id="d" ontouchstart="tstart(68);" ontouchend="tend(68);">D</td>
-					</tr>
-				</table>
-    </body>
+	<head>
+		<meta name="viewport" content="initial-scale=1"/>
+		<title>TB6612 Demo</title>
+		<style>
+			table {
+				border-spacing: 5px;
+				margin: 0 auto;
+			}
+			td {
+				border: 1px solid #000;
+				border-radius: 3px;
+				cursor: pointer;
+				padding: 20px;
+				font-size: 24px;
+				font-weight: bold;
+				text-align: center;
+				user-select: none;
+				-moz-user-select: none;
+				-webkit-touch-callout: none;
+			}
+			td.noborder {
+				border: none;
+			}
+			.highlight {
+				background-color: #DDD;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"
+			defer></script>
+		<script src="keys.js" defer></script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td class="noborder"></td>
+				<td id="w" ontouchstart="tstart(87);" ontouchend="tend(87);">W</td>
+				<td class="noborder"></td>
+			</tr>
+			<tr>
+				<td id="a" ontouchstart="tstart(65);" ontouchend="tend(65);">A</td>
+				<td id="s" ontouchstart="tstart(83);" ontouchend="tend(83);">S</td>
+				<td id="d" ontouchstart="tstart(68);" ontouchend="tend(68);">D</td>
+			</tr>
+		</table>
+	</body>
 </html>

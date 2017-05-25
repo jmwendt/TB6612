@@ -2,6 +2,10 @@
   "name": "TB6612_Node.js_Library",
   "description": "Node.js library for the Sparkfun H-Bridge block for Edison",
   "version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jmwendt/TB6612.git"
+	},
   "main": "main.js",
   "engines": {
     "node": ">=0.10.0"

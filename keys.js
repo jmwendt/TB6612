@@ -1,6 +1,6 @@
 /**************
  * keys.js
- * Javascript file for detecting WASD key input /  mobile touch
+ * Javascript file for detecting WASD key input / mobile touch
  * Jake Wendt
  * 24 May 2017
  * https://github.com/jmwendt/TB6612

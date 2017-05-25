@@ -20,9 +20,9 @@ var http = require("http"),
 
 var motor = new tb6612();
 var fwd = 0,
-		rev = 0,
-		left = 0,
-		right = 0;
+	rev = 0,
+	left = 0,
+	right = 0;
 
 var ipPort = 1337;
 
@@ -82,5 +82,5 @@ app.get('/', function(req, res) {
 });
 
 http.createServer(app).listen(app.get('port'), function () {
-  console.log('HTTP server listening on port ' + app.get('port'));
+	console.log('HTTP server listening on port ' + app.get('port'));
 });

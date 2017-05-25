@@ -30,9 +30,9 @@ To run the example:
 * Copy repository's contents to Intel Edison (or clone from git directly)
 * Navigate to the directory on your Edison
 * Install Node.js packages by running 'npm install'
-* Run the servery with 'node main.js'
+* Run the server with 'node main.js'
 * In a browser on your computer or phone go to [yourEdison'sIP]:1337
-* You should see a screen with the classic WASD which will responde to 
+* You should see a screen with the classic WASD which will respond to 
 touch or keyboard input
 
 License Information
